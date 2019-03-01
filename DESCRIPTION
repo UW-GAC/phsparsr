@@ -1,12 +1,12 @@
 Package: phsparsr
-Title: What the Package Does (One Line, Title Case)
+Title: Tools for downloaders/users/people getting data out of dbGaP
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Ben",
+           family = "Heavner`",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
+           email = "bheavner@uw.edu")
+Description: For now, phsparsr just includes tools to extract phs ids from html provided by dbGaP.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -14,3 +14,5 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Suggests: 
     testthat
+Imports: 
+    xml2
