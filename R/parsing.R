@@ -9,8 +9,52 @@
 #' split the project tables by project. Return list of projects.
 #' @noRd
 .split_by_project <- function(project_tables){
-# note: this is useful for finding project splits...
-#  purrr::map_int(purrr::map(table_rows, function(x){xml_children(x)}), function(x){length(x)})
+  # get a list of xml_children for each row (basically, number of columns), then
+  # get the length of each of these lists
+  row_lengths <-
+    purrr::map_int(
+      purrr::map(
+        project_tables, function(x){
+          xml2::xml_children(x)
+          }
+      ),
+      function(x){
+        length(x)
+        }
+    )
+
+  # get the row number of each header row
+  header_row_indexes <-
+    which(row_lengths %in% 2)
+
+  # short circuit if only one project
+  if (length(header_row_indexes) == 1) {
+    return(project_tables)
+  }
+
+  # initialize empty list of length = number of projects
+  by_project <- vector("list", length(header_row_indexes))
+
+  # loop to divide project_tables into by_project
+  for (index in seq(1:length(by_project))){
+    starting_row <- header_row_indexes[index]
+
+    if (is.na(header_row_indexes[index + 1])) {
+      ending_row <- length(project_tables)
+    } else {
+      ending_row <- header_row_indexes[index + 1] - 1
+    }
+
+    by_project[[index]] <- project_tables[starting_row:ending_row]
+  }
+
+  return(by_project)
+}
+
+#' parse a single project to get project number and phs numbers
+#' @noRd
+.parse_project <- function(){
+
 }
 
 #' Get phs identifiers from a dbGaP-provided Study Request List

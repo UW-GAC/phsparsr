@@ -16,4 +16,5 @@ Suggests:
     testthat
 Imports: 
     xml2,
-    magrittr
+    magrittr,
+    purrr
