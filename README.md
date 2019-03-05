@@ -17,5 +17,10 @@ devtools::install_github("UW-GAC/phsparsr")
 ```
 
 ## Example
+```r
+html_path <-
+    system.file("extdata", "example.html",
+                package = "phsparsr", mustWork = TRUE)
 
-Coming soon!
+parsed <- parse_phs(html_path)
+```
