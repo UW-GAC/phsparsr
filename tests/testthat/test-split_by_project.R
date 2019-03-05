@@ -1,6 +1,6 @@
 context("test-.split_by_project")
 
-test_that(".spllit_by_project returns a list", {
+test_that(".split_by_project returns a list", {
   html_path <-
     system.file("extdata", "example.html",
                 package = "phsparsr", mustWork = TRUE)

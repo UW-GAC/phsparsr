@@ -17,4 +17,7 @@ Suggests:
 Imports: 
     xml2,
     magrittr,
-    purrr
+    purrr,
+    stringr,
+    dplyr,
+    tibble

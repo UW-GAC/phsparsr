@@ -51,10 +51,62 @@
   return(by_project)
 }
 
-#' parse a single project to get project number and phs numbers
+#' parse a single project to get tibble with phs, expiration, consent code
+#' THIS SHOULD BE REFACTORED
 #' @noRd
-.parse_project <- function(){
+.parse_project <- function(a_project){
+  # define my regexes
+  phs_regex <- paste0(
+    "(phs", # start capture group with the string "phs"
+    "\\d{6})", # followed by 6 digits
+    "\\.v", # followd by the string ".v"
+    "(\\d+?)", # followed by 1 or more (but as few as possible) digits
+    "\\.p", # followed yb the string ".p"
+    "(\\d+?)") # followed by 1 or more (but as few as possible) digits
 
+  consent_regex <- paste0(
+    "^", # at the beginning of the string
+    "\\\n", # the string "\n"
+    "(.+)") # followed by 1 or more characters that we want to capture
+
+  # run the loop. Note: this is bad b/c uncertain length..
+  for (index in 2:length(a_project)){
+    # get a row
+    a_row <- a_project[index]
+    # stop if the row doesn't have 5 columns
+    if (length(xml2::xml_children(a_row)) != 5){
+      break
+    }
+
+    expiration <- xml2::xml_text(xml2::xml_children(a_row)[4])
+    string_with_phs <- xml2::xml_text(xml2::xml_children(a_row)[2])
+    phs <- stringr::str_match(string_with_phs, phs_regex)[[2]]
+    string_with_consent <-
+      xml2::xml_text(
+        xml2::xml_children(
+          xml2::xml_children(
+            xml2::xml_children(a_row)[2])
+          )
+        [2])
+
+    # note: string_with_consent includes \n, introduced by xml_text(), which
+    # regex will call end of line...
+    consent_code <- stringr::str_trim(
+      stringr::str_match(string_with_consent, consent_regex)[[2]])
+
+    # check for results tibble
+    if (!"result" %in% ls()){
+      # initialze empty data frame
+      result <- dplyr::tibble(phs, expiration, consent_code)
+    } else {
+      result <- dplyr::bind_rows(
+        result,
+        dplyr::tibble(phs, expiration, consent_code)
+      )
+    }
+  }
+
+  return(result)
 }
 
 #' Get phs identifiers from a dbGaP-provided Study Request List
