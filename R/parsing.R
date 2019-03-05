@@ -1,3 +1,5 @@
+# first, helper/internal functions ---------------------------------------------
+
 #' Get the set of approved projects tables from HTML
 #' see https://www.w3schools.com/xml/xml_xpath.asp for xpath syntax
 #' @noRd
@@ -29,7 +31,7 @@
 
   # short circuit if only one project
   if (length(header_row_indexes) == 1) {
-    return(project_tables)
+    return(list(project_tables))
   }
 
   # initialize empty list of length = number of projects
@@ -109,6 +111,55 @@
   return(result)
 }
 
+#' get a project number by parsing a single project
+#' @noRd
+.get_number <- function(a_project){
+
+  # define my regex
+  number_regex <- paste0(
+    "#", # the hash character
+    "(", # open capture group
+    "\\d+", # one or more numbers
+    ")", # close capture group
+    ":") # the colon character
+
+  # get line with number
+  header_line <- a_project[[1]]
+
+  # stop if the row doesn't have 2 columns
+  if (length(xml2::xml_children(header_line)) != 2){
+    stop("header line doesn't have 2 columns as expected")
+  }
+
+  # get target line as text
+  string_with_number <-
+    stringr::str_squish(
+      xml2::xml_text(xml2::xml_children(header_line)[1])
+    )
+
+  # return number obtained with regex
+  stringr::str_match(string_with_number, number_regex)[[2]]
+}
+
+#' parse a list of projects to get a named list of tibbles with phs, expiration,
+#' consent code. List item names should be project number.
+#' @noRd
+.parse_list <- function(project_list){
+
+  # first, parse each project
+  parsed_projects <- purrr::map(project_list, .parse_project)
+
+  # next, get list of project numbers for names
+  project_numbers <- purrr::map(project_list, .get_number)
+
+  # assign names to parsed projects
+  names(parsed_projects) <- project_numbers
+
+  return(parsed_projects)
+}
+
+# next, functions to export from package----------------------------------------
+
 #' Get phs identifiers from a dbGaP-provided Study Request List
 #'
 #' @param html_path filepath to the html page downloaded from dbGaP
@@ -124,5 +175,6 @@
 #' @export
 parse_phs <- function(html_path){
   table_rows <- .get_rows_from_html(html_path)
-
+  project_list <- .split_by_project(table_rows)
+  .parse_list(project_list)
 }

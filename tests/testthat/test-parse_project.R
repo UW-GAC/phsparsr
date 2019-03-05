@@ -5,7 +5,8 @@ test_that(".parse_project returns a tibble", {
     system.file("extdata", "1_example.html",
                 package = "phsparsr", mustWork = TRUE)
   table_rows <- .get_rows_from_html(html_path)
-  parsed <- .parse_project(table_rows)
+  project_list <- .split_by_project(table_rows)
+  parsed <- .parse_project(project_list[[1]])
 
   expect_true(tibble::is_tibble(parsed))
 })
@@ -15,7 +16,8 @@ test_that(".parse_project returns expected tibble", {
     system.file("extdata", "1_example.html",
                 package = "phsparsr", mustWork = TRUE)
   table_rows <- .get_rows_from_html(html_path)
-  parsed <- .parse_project(table_rows)
+  project_list <- .split_by_project(table_rows)
+  parsed <- .parse_project(project_list[[1]])
 
   expected <-
     structure(

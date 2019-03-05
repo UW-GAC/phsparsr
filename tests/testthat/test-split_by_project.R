@@ -17,7 +17,7 @@ test_that(".split_by_project returns correct 1-length list", {
   table_rows <- .get_rows_from_html(html_path)
 
   split <- .split_by_project(table_rows)
-  expect_identical(split, table_rows)
+  expect_identical(split, list(table_rows))
 })
 
 test_that(".split_by_project returns 2-length list for 2-project doc", {
