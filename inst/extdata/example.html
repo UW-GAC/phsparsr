@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0058)https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?page=pi_requests -->
+<html lang="en"><head profile="http://www.w3.org/2005/10/profile"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="icon" type="image/x-icon" href="https://www.ncbi.nlm.nih.gov/favicon.ico">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="galert_type" content="default">
+<title>
+	dbGaP: Authorized Access: Request List</title>
+<!--<base href="https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?">--><base href=".">
+<script type="text/javascript" src="./dbGaP_ Authorized Access_ Request List_files/jquery-3.3.1.min.js.download"></script><script type="text/javascript">
+    jQuery.getScript("/core/alerts/alerts.js", function () {
+    galert(['div.content', 'body > *:nth-child(1)']);
+    });
+  </script><script type="text/javascript" src="./dbGaP_ Authorized Access_ Request List_files/utils.1.js.download"></script><script type="text/javascript" src="./dbGaP_ Authorized Access_ Request List_files/cssQuery-p.js.download"></script><script type="text/javascript" src="./dbGaP_ Authorized Access_ Request List_files/popup.js.download"></script><script type="text/javascript" src="./dbGaP_ Authorized Access_ Request List_files/zebra.js.download"></script><script type="text/javascript">
+    function toggleClass(element, className) {
+      if (utils.hasClass(element, className)) utils.removeClass(element, className);
+      else utils.addClass(element, className);
+    }
+
+    function toggleSearch(el) {
+      var element = document.getElementById( el.href.substr( el.href.lastIndexOf("#") + 1 ) )
+      if (utils.hasClass(element, "invis")) {
+        utils.removeClass(element, "invis");
+        document.getElementById('term').focus();
+      } else {
+        utils.addClass(element, "invis");
+        document.getElementById('term').blur();
+      }
+      return false;
+    }
+
+    function tr_showhide(e) {
+      var gs = e.id.substr(1);
+      toggleClass(document.getElementById("s"+gs), "hid");
+      toggleClass(document.getElementById("h"+gs), "hid");
+      toggleClass(document.getElementById("b"+gs), "hid");
+      return false;
+    }
+    
+    function showhide(oName) {
+      toggleClass(document.getElementById(oName), "hid");
+      return false;
+    }
+    
+		function showHideTabSection(e) {
+			var tabs = cssQuery(".tabmenu2 a");
+			for (var i = 0; tabs.length > i; i++) {
+				utils.removeClass(tabs[i].parentNode, "current");
+        utils.addClass(document.getElementById(tabs[i].href.substr(tabs[i].href.lastIndexOf('#')+1)), "hid");
+      }
+      utils.addClass(this.parentNode, "current");
+			utils.removeClass(document.getElementById(this.href.substr(this.href.lastIndexOf('#')+1)), "hid");
+			e.preventDefault();
+		}
+  </script><script type="text/javascript">
+      
+		utils.addEvent(window,"load",initAll);
+
+		function initAll() {
+			var els = cssQuery(".tabmenu2 a");
+			for (var i = 0; i < els.length; i++)
+				utils.addEvent(els[i],"click",showHideTabSection);
+  		}
+  
+    </script><link href="./dbGaP_ Authorized Access_ Request List_files/js.css" rel="stylesheet" type="text/css">
+<link href="./dbGaP_ Authorized Access_ Request List_files/style1a.css" rel="stylesheet" type="text/css">
+<link href="./dbGaP_ Authorized Access_ Request List_files/8sa.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    .pager_num { margin:0 0.15em; padding:0 .25em 0 .5em; }
+
+    .pager { float:right; padding:0 0 0 .5em; background-color:#fff; font-size:.8em;}
+    .pager input { text-align:center; font-size:1.1em; margin:0 .5em 0 0; color:Red;}
+    .pager>span { margin:0 0.25em 0 .5em; font-weight:bold;}
+  </style>
+<!--
+    [if lt IE 7]>
+    
+<script src="ie7-standard-p.js" type="text/javascript"></script>
+<![endif]--><!--
+    [if IE 7]>
+    
+<script src="ie7-core.js" type="text/javascript"></script>
+<script src="ie7-css2-selectors.js" type="text/javascript"></script>
+<script src="ie7-html4.js" type="text/javascript"></script>
+<![endif]-->
+</head>
+<body id="list">
+<div id="header-global">
+<div id="site-logo" class="branding"><strong id="ncbi-logo" class="logo"><a href="https://example.com" accesskey="1" title="NCBI Home (access key &#39;1&#39;)"><span></span><img src="./dbGaP_ Authorized Access_ Request List_files/ncbi-logo-small_369_.gif" alt="NCBI"></a></strong></div>
+<div id="global-nav"><form ><ul class="pipelist2l">
+<li><a href="https://example.com">Site map</a></li>
+<li><a href="https://example.com">All databases</a></li>
+<li><a href="https://example.com">PubMed</a></li>
+<li>
+<a href="https://example.com" onclick="return toggleSearch(this)">Search</a><span id="gloabal-search" class="invis"> <label>for <input type="text" name="term" id="term" size="24"></label> <label>within <select name="db"><option value="34" selected="">dbGaP</option>
+</select></label> <input type="submit" name="submit" value="Search"><input type="hidden" name="SITE" value="dbGAPHome"></span>
+</li>
+</ul></form></div>
+</div>
+<div id="header-local">
+<div id="prj-logo" class="branding"><strong id="dbgap-logo" class="logo"><a href="https://example.com" title="db GaP Home"><span></span><img src="./dbGaP_ Authorized Access_ Request List_files/dbgap_logo_eee.png" alt="dbGaP" height="48" width="163"></a></strong></div>
+<div id="toolbox"><ul><li style="width: auto; height: auto; border: none">
+<span>Logged in as </span><input type="hidden" id="useraliasstring" value="Test=User=test@example.com"><strong title="TESTUSR@eRA, #23438, %user%%downloader%">Test&nbsp;User</strong> | 
+            <a href="https://example.com" style="border: none; background: transparent">Log out</a>
+</li></ul></div>
+<div id="local-nav"><ul class="tabmenu">
+<li><a href="https://example.com"><span>Browse/Search</span></a></li>
+<li id="tabmenu_current" class="selected">
+<a href="https://example.com"><span>Authorized Access</span></a><ul>
+<li><a href="https://example.com" title="List of Projects"><span>Data Browser</span></a></li>
+<li><a href="https://example.com" title="List of Projects"><span>My Projects</span></a></li>
+<li class="subcurrent"><a href="https://example.com" title="List of Requests
+      "><span>My Requests</span></a></li>
+<li><a href="https://example.com" title="Downloads
+      "><span>Downloads</span></a></li>
+<li><a href="https://example.com" title="My Profile"><span>My Profile</span></a></li>
+</ul>
+</li>
+<li>
+<a><span>Help</span></a><ul>
+<li><a href="https://example.com"><span>FAQ</span></a></li>
+<li><a href="https://example.com"><span>Browse Tutorial</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div>
+<div id="content">
+<h1>Request List</h1>
+<ul class="tabmenu2" style="font-size:90%"><li class="current"><a href="https://example.com">
+              Approved (<strong>2</strong>)
+            </a></li></ul>
+<div id="approved"><table class="zebra" width="100%" id="active">
+<colgroup>
+<col width="1%">
+<col>
+<col width="5%">
+<col width="5%">
+<col>
+</colgroup>
+<thead><tr>
+<th style="white-space: nowrap">#</th>
+<th>Study, Consent</th>
+<th>Status</th>
+<th style="white-space: nowrap">Expiration</th>
+<th>Actions</th>
+</tr></thead>
+<tbody>
+<tr style="font-size:90%">
+<th colspan="4" class="project-descr" style="font-weight:bold">
+              PI:
+               Example PI
+              , Project
+               
+    #1:&nbsp;
+    Project Name 1</th>
+<th></th>
+</tr>
+<tr class="altrow">
+<td style="text-align: center; font-size:90%; white-space: nowrap;">12345-1</td>
+<td style="font-size:90%"><div>
+<a href="https://example.com" target="aux">Framingham Cohort</a>
+        (phs000007.v30.p1)
+      <div style="margin-left: 2em;">
+<a title="Use of this data is limited to health/medical/biomedical purposes, does not include the study of population origins or ancestry.
+Requestor must provide documentation of local IRB approval.
+Use of the data includes methods development research (e.g., development of software or algorithms).
+
+Use of the Framingham data deposited in dbGaP is restricted to research on: genotypephenotype associations; molecular phenotype (e.g., gene expression; microRNA)-phenotype associations; and proteomics/metabolomics-phenotype associations. All other phenotype-only analyses are prohibited (note: investigators may request data for such phenotype-only analyses through NHLBI’s BioLINCC). Additionally, the Framingham data may not be used 
+to: 
+o Investigate individual pedigree structures or individual participant genotypes for the 
+purpose of identifying individuals or families; or explore issues such as non-maternity or 
+non-paternity.
+o Investigate topics that could be considered as stigmatizing an individual or group.
+o Assess outcomes that are not related to health or disease conditions (note: methodological 
+research that will serve as a prelude to health or disease research is permitted).
+Please note that only full or expedited approvals will be accepted." href="https://example.com">Health/Medical/Biomedical (IRB, MDS)</a> 
+      (phs000007.v30.p11.c1),&nbsp;<abbr title="National Heart, Lung, and Blood Institute DAC"><a href="mailto:test@example.com">NHLBI</a></abbr>
+</div>
+</div></td>
+<td style="text-align: center; white-space: nowrap;  font-size:90%">
+            Data access<br>GRANTED
+          </td>
+<td style="text-align: center; font-size:90%">2019-02-29</td>
+<td style="white-space: nowrap;">
+<div style="margin: 0 0.3em 0.1em 0.3em ;"><a href="https://example.com"><b>Request Files</b></a></div>
+<div style="font-weight:normal; font-size: 90%;"><a href="https://example.com" target="_new">
+              Processing History
+            </a></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; font-size:90%; white-space: nowrap;">23456-2</td>
+<td style="font-size:90%"><div>
+<a href="https://example.com" target="aux">Framingham Cohort</a>
+        (phs000007.v30.p1)
+      <div style="margin-left: 2em;">
+<a title="Use of this data is limited to health/medical/biomedical purposes, does not include the study of population origins or ancestry.
+Requestor must provide documentation of local IRB approval.
+Use of the data is limited to not-for-profit organizations.
+Use of the data includes methods development research (e.g., development of software or algorithms).
+
+Use of the Framingham data deposited in dbGaP is restricted to research on: genotypephenotype associations; molecular phenotype (e.g., gene expression; microRNA)-phenotype associations; and proteomics/metabolomics-phenotype associations. All other phenotype-only analyses are prohibited (note: investigators may request data for such phenotype-only analyses through NHLBI’s BioLINCC). Additionally, the Framingham data may not be used 
+to: 
+o Investigate individual pedigree structures or individual participant genotypes for the 
+purpose of identifying individuals or families; or explore issues such as non-maternity or 
+non-paternity.
+o Investigate topics that could be considered as stigmatizing an individual or group.
+o Assess outcomes that are not related to health or disease conditions (note: methodological 
+research that will serve as a prelude to health or disease research is permitted).
+Please note that only full or expedited approvals will be accepted." href="https://example.com">Health/Medical/Biomedical (IRB, NPU, MDS)</a> 
+      (phs000007.v30.p11.c2),&nbsp;<abbr title="National Heart, Lung, and Blood Institute DAC"><a href="mailto:test@example.com">NHLBI</a></abbr>
+</div>
+</div></td>
+<td style="text-align: center; white-space: nowrap;  font-size:90%">
+            Data access<br>GRANTED
+          </td>
+<td style="text-align: center; font-size:90%">2019-02-29</td>
+<td style="white-space: nowrap;">
+<div style="margin: 0 0.3em 0.1em 0.3em ;"><a href="https://example.com"><b>Request Files</b></a></div>
+<div style="font-weight:normal; font-size: 90%;"><a href="https://example.com" target="_new">
+              Processing History
+            </a></div>
+</td>
+</tr>
+<tr style="font-size:90%">
+<th colspan="4" class="project-descr" style="font-weight:bold">
+              PI:
+               Example PI
+              , Project
+               
+    #2:&nbsp;
+    Project Name 2</th>
+<th></th>
+</tr>
+<tr class="altrow">
+<td style="text-align: center; font-size:90%; white-space: nowrap;">54321-2</td>
+<td style="font-size:90%"><div>
+<a href="https://example.com" target="aux">Framingham Cohort</a>
+        (phs000007.v30.p1)
+      <div style="margin-left: 2em;">
+<a title="Use of this data is limited to health/medical/biomedical purposes, does not include the study of population origins or ancestry.
+Requestor must provide documentation of local IRB approval.
+Use of the data includes methods development research (e.g., development of software or algorithms).
+
+Use of the Framingham data deposited in dbGaP is restricted to research on: genotypephenotype associations; molecular phenotype (e.g., gene expression; microRNA)-phenotype associations; and proteomics/metabolomics-phenotype associations. All other phenotype-only analyses are prohibited (note: investigators may request data for such phenotype-only analyses through NHLBI’s BioLINCC). Additionally, the Framingham data may not be used 
+to: 
+o Investigate individual pedigree structures or individual participant genotypes for the 
+purpose of identifying individuals or families; or explore issues such as non-maternity or 
+non-paternity.
+o Investigate topics that could be considered as stigmatizing an individual or group.
+o Assess outcomes that are not related to health or disease conditions (note: methodological 
+research that will serve as a prelude to health or disease research is permitted).
+Please note that only full or expedited approvals will be accepted." href="https://example.com">Health/Medical/Biomedical (IRB, MDS)</a> 
+      (phs000007.v30.p11.c1),&nbsp;<abbr title="National Heart, Lung, and Blood Institute DAC"><a href="mailto:test@example.com">NHLBI</a></abbr>
+</div>
+</div></td>
+<td style="text-align: center; white-space: nowrap;  font-size:90%">
+            Data access<br>GRANTED
+          </td>
+<td style="text-align: center; font-size:90%">2019-02-29</td>
+<td style="white-space: nowrap;">
+<div style="margin: 0 0.3em 0.1em 0.3em ;"><a href="https://example.com"><b>Request Files</b></a></div>
+<div style="font-weight:normal; font-size: 90%;"><a href="https://example.com" target="_new">
+              Processing History
+            </a></div>
+</td>
+</tr>
+<tr>
+<td style="text-align: center; font-size:90%; white-space: nowrap;">65432-1</td>
+<td style="font-size:90%"><div>
+<a href="https://example.com" target="aux">Framingham Cohort</a>
+        (phs000007.v30.p1)
+      <div style="margin-left: 2em;">
+<a title="Use of this data is limited to health/medical/biomedical purposes, does not include the study of population origins or ancestry.
+Requestor must provide documentation of local IRB approval.
+Use of the data is limited to not-for-profit organizations.
+Use of the data includes methods development research (e.g., development of software or algorithms).
+
+Use of the Framingham data deposited in dbGaP is restricted to research on: genotypephenotype associations; molecular phenotype (e.g., gene expression; microRNA)-phenotype associations; and proteomics/metabolomics-phenotype associations. All other phenotype-only analyses are prohibited (note: investigators may request data for such phenotype-only analyses through NHLBI’s BioLINCC). Additionally, the Framingham data may not be used 
+to: 
+o Investigate individual pedigree structures or individual participant genotypes for the 
+purpose of identifying individuals or families; or explore issues such as non-maternity or 
+non-paternity.
+o Investigate topics that could be considered as stigmatizing an individual or group.
+o Assess outcomes that are not related to health or disease conditions (note: methodological 
+research that will serve as a prelude to health or disease research is permitted).
+Please note that only full or expedited approvals will be accepted." href="https://example.com">Health/Medical/Biomedical (IRB, NPU, MDS)</a> 
+      (phs000007.v30.p11.c2),&nbsp;<abbr title="National Heart, Lung, and Blood Institute DAC"><a href="mailto:test@example.com">NHLBI</a></abbr>
+</div>
+</div></td>
+<td style="text-align: center; white-space: nowrap;  font-size:90%">
+            Data access<br>GRANTED
+          </td>
+<td style="text-align: center; font-size:90%">2019-02-29</td>
+<td style="white-space: nowrap;">
+<div style="margin: 0 0.3em 0.1em 0.3em ;"><a href="https://example.com"><b>Request Files</b></a></div>
+<div style="font-weight:normal; font-size: 90%;"><a href="https://example.com" target="_new">
+              Processing History
+            </a></div>
+</td>
+</tr>
+</tbody>
+</table></div>
+<div id="rejected" class="hid"><table class="zebra" width="100%" id="active">
+<colgroup>
+<col width="1%">
+<col>
+<col width="5%">
+<col width="5%">
+<col>
+</colgroup>
+<thead><tr>
+<th style="white-space: nowrap">#</th>
+<th>Study, Consent</th>
+<th>Status</th>
+<th style="white-space: nowrap">Expiration</th>
+<th>Actions</th>
+</tr></thead>
+<tbody></tbody>
+</table></div>
+<div id="inprocess" class="hid"><table class="zebra" width="100%" id="active">
+<colgroup>
+<col width="1%">
+<col>
+<col width="5%">
+<col width="5%">
+<col>
+</colgroup>
+<thead><tr>
+<th style="white-space: nowrap">#</th>
+<th>Study, Consent</th>
+<th>Status</th>
+<th style="white-space: nowrap">Expiration</th>
+<th>Actions</th>
+</tr></thead>
+<tbody></tbody>
+</table></div>
+<div id="expired" class="hid"><table class="zebra" width="100%" id="active">
+<colgroup>
+<col width="1%">
+<col>
+<col width="5%">
+<col width="5%">
+<col>
+</colgroup>
+<thead><tr>
+<th style="white-space: nowrap">#</th>
+<th>Study, Consent</th>
+<th>Status</th>
+<th style="white-space: nowrap">Expiration</th>
+<th>Actions</th>
+</tr></thead>
+<tbody></tbody>
+</table></div>
+<div id="closed" class="hid"><table class="zebra" width="100%" id="active">
+<colgroup>
+<col width="1%">
+<col>
+<col width="5%">
+<col width="5%">
+<col>
+</colgroup>
+<thead><tr>
+<th style="white-space: nowrap">#</th>
+<th>Study, Consent</th>
+<th>Status</th>
+<th style="white-space: nowrap">Expiration</th>
+<th>Actions</th>
+</tr></thead>
+<tbody></tbody>
+</table></div>
+</div>
+<div id="footer">
+<p><abbr title="National Institutes of Health">NIH</abbr> Genotype and Phenotype database is a service of NCBI. Please <strong><a href="https://example.com" target="email">contact us</a></strong> with any questions.</p>
+<ul class="pipelist2l">
+<li><a href="http://example.com">National Center for Biotechnology Information</a></li>
+<li><a href="http://example.com">U.S. National Library of Medicine</a></li>
+</ul>
+<ul class="pipelist2l">
+<li><a href="http://example.com">Privacy Notice</a></li>
+<li><a href="http://example.com">Disclaimer</a></li>
+<li><a href="http:/example.com">Accessibility</a></li>
+</ul>
+<ul class="pipelist2l" id="banners">
+<li><a href="http://example.com" id="link_nih">National Institutes of Health</a></li>
+<li><a href="http://example.com" id="link_dhhs">United States Department of Health and Human Services</a></li>
+<li><a href="http://example.com" id="link_firstgov">FirstGov.gov: The U.S. Government's Official Web Portal</a></li>
+</ul>
+</div>
+
+
+</body></html>

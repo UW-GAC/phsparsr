@@ -1,6 +1,6 @@
 Package: phsparsr
 Title: Tools for downloaders/users/people getting data out of dbGaP
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person(given = "Ben",
            family = "Heavner`",
@@ -15,4 +15,9 @@ RoxygenNote: 6.1.1
 Suggests: 
     testthat
 Imports: 
-    xml2
+    xml2,
+    magrittr,
+    purrr,
+    stringr,
+    dplyr,
+    tibble
