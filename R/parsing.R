@@ -88,8 +88,8 @@
         xml2::xml_children(
           xml2::xml_children(
             xml2::xml_children(a_row)[2])
-          )
-        [2])
+          ))
+        #[2])
 
     # note: string_with_consent includes \n, introduced by xml_text(), which
     # regex will call end of line...

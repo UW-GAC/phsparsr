@@ -1,6 +1,6 @@
 Package: phsparsr
 Title: Tools for downloaders/users/people getting data out of dbGaP
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: 
     person(given = "Ben",
            family = "Heavner`",
